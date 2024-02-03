@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --todo-bg-color: #d4fafc;
+  --text-color: #020024;
+  --btn-color: #88ab8e;
+  --clicked-color: #b7b7b7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#todo {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #020024, #0a0a88, #0031b6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Todo Backgound section */
+#todo .todo-container {
+  max-width: 540px;
+  width: 50vw;
+  background-color: var(--todo-bg-color);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+#todo .todo-container h2 img {
+  width: 2.5rem;
+}
+
+#todo .todo-container h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  gap: 0.5rem;
+}
+
+/* Input Button section */
+#todo .todo-container .inp {
+  gap: 1rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+#todo .todo-container .inp input {
+  width: 20vw;
+  padding: 0.5rem 1rem;
+  outline: none;
+  background-color: transparent;
+  border: 0.1rem solid gray;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.6;
+  transition: opacity 0.4s ease-in-out;
+}
+
+#todo .todo-container .inp input:hover,
+#todo .todo-container .inp input:focus {
+  opacity: 1;
+}
+
+#todo .todo-container .inp button {
+  background-color: var(--btn-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  outline: none;
+  border: 0.1rem solid transparent;
+  width: 5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out, border 0.4s ease-in-out;
+}
+
+#todo .todo-container .inp button:hover {
+  background-color: transparent;
+  border: 0.1rem solid var(--btn-color);
+}
+
+/* List section */
+
+#todo #lists ul li {
+  list-style: none;
+  padding: 0.5rem 4rem;
+  position: relative;
+  transform: translate3d(0, -2rem, 0);
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+
+#todo #lists ul li::before {
+  content: "";
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 2rem;
+  top: 0.7rem;
+  background-image: url(img/unchecked.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#todo #lists img {
+  width: 1.3rem;
+  position: absolute;
+  right: 2rem;
+  top: 0.7rem;
+  border-radius: 50%;
+}
+/* #todo #lists ul li::after {
+  content: "";
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  right: 2rem;
+  top: 0.7rem;
+  background-image: url(img/crossed.png);
+  background-size: cover;
+  background-position: center;
+} */
+
+#todo #lists ul li.clicked {
+  transform: translate3d(0, 0, 0);
+  color: var(--clicked-color);
+  text-decoration: line-through;
+}
+
+#todo #lists ul li.clicked::before {
+  background-image: url(img/tick.png);
+}
