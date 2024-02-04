@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="weather">
+      <div class="inp-btn">
+        <div class="input">
+          <input
+            id="input-city"
+            type="text"
+            placeholder="Enter city name"
+            spellcheck="false"
+          />
+          <div class="search-btn">
+            <button id="search-btn"><i class="bx bx-search"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="error">
+        <p>Invalid city name</p>
+      </div>
+      <div id="status-display">
+        <div class="icon-temp-city box-shadow">
+          <div class="status-icon">
+            <img id="weather-icon" src="imgs/clear.png" alt="clear" />
+          </div>
+          <div class="temp-city">
+            <h1 id="temp">--<sup>°C</sup></h1>
+            <h4 id="city-name">---</h4>
+          </div>
+        </div>
+        <div class="humidity-wind">
+          <div class="humidity box-shadow">
+            <img src="imgs/humidity.png" alt="humidity" />
+            <h3 id="humidity-percentage">--%</h3>
+            <h4>Humidity</h4>
+          </div>
+          <div class="wind box-shadow">
+            <img src="imgs/wind.png" alt="wind" />
+            <h3 id="wind-speed">-- km/h</h3>
+            <h4>Wind</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
