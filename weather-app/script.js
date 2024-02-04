@@ -3,7 +3,7 @@ const apiKey = "21e0c886d8f265dd12bf3818b22bf6ab",
   searchBtn = document.querySelector("#search-btn"),
   inputBox = document.querySelector("#input-city"),
   weatherIcon = document.querySelector("#weather-icon"),
-  show = document.querySelector("#status-display"),
+  displayStatus = document.querySelector("#status-display"),
   invalid = document.querySelector(".error");
 
 const cheakWeather = async (city) => {
@@ -69,9 +69,11 @@ const cheakWeather = async (city) => {
 };
 
 searchBtn.addEventListener("click", () => {
+  displayStatus.style.display = "block";
   let city = inputBox.value;
   cheakWeather(city);
   if (city === "") {
     alert("Enter city name");
+    displayStatus.style.display = "none";
   }
 });

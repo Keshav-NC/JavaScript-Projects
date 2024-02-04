@@ -22,15 +22,18 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(150deg, #40dfef, #92b4ec);
+  margin-top: 2rem;
+  background: linear-gradient(to top, #2980b9, #6dd5fa, #ffffff);
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #weather {
   background: linear-gradient(130deg, #85f4ff, #b8fff9);
   max-width: 40rem;
   width: 100vw;
+  max-height: 4.8rem;
   padding: 1rem;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
@@ -87,7 +90,7 @@ button {
   padding: 0 0.5rem;
   font-size: 0.8rem;
   font-weight: 500;
-  margin-top: -1rem;
+  margin-top: -1.4rem;
   display: none;
 }
 
@@ -95,7 +98,7 @@ button {
   display: block;
 }
 
-#weather #status-display .icon-temp-city {
+#status-display .icon-temp-city {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,26 +106,48 @@ button {
   transition-property: transform;
 }
 
-#weather #status-display .icon-temp-city #weather-icon {
+#weather-icon {
   width: 10rem;
 }
 
-#weather #status-display .icon-temp-city .temp-city {
+#status-display .icon-temp-city .temp-city {
   text-align: center;
 }
 
-#weather #status-display .icon-temp-city .temp-city h1 {
+#status-display .icon-temp-city .temp-city h1 {
   font-size: 3.5rem;
   z-index: 1;
 }
 
-#weather #status-display h4 {
+#status-display .icon-temp-city .temp-city h1 sup {
+  font-size: calc(3.5rem / 2);
+}
+
+#status-display .icon-temp-city .status-icon,
+.temp-city,
+.humidity,
+.wind {
+  animation: text-animation 2s ease-in-out 1;
+}
+
+@keyframes text-animation {
+  from {
+    opacity: 0;
+    transform: translate3d(-2rem, -5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#status-display h4 {
   color: rgb(88, 87, 87);
   font-size: 1rem;
   font-weight: 600;
 }
 
-#weather #status-display .humidity-wind {
+#status-display .humidity-wind {
   margin-top: 1rem;
   display: flex;
   justify-content: space-around;
@@ -131,19 +156,38 @@ button {
   text-align: center;
 }
 
-#weather #status-display .humidity-wind img {
+#status-display .humidity-wind img {
   width: 3rem;
   filter: brightness(0);
 }
 
-#weather #status-display .humidity-wind h3 {
+#status-display .humidity-wind h3 {
   font-size: 1.8rem;
+}
+
+#status-display {
+  max-width: 38rem;
+  width: 100vw;
+  display: none;
+  animation: show-status 2s ease-in-out 1;
+}
+
+@keyframes show-status {
+  from {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transform: translate3d(0, -2rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 #weather .inp-btn input,
 button,
-#weather #status-display .icon-temp-city #weather-icon,
-#weather #status-display .icon-temp-city {
+#weather-icon,
+#status-display {
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
 }
