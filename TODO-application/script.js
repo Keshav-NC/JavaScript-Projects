@@ -1,10 +1,11 @@
 const clicked = document.querySelector("#lists ul li"),
   inputBox = document.querySelector("#input-box"),
   list = document.querySelector("#lists ul"),
-  button = document.querySelector("#btn");
+  button = document.querySelector("#btn"),
+  taskCompleted = document.querySelector("#taskCompleted ul li");
 
 // Adding tasks into list
-btn.addEventListener("click", () => {
+button.addEventListener("click", () => {
   if (inputBox.value === "") alert("Must write something!");
   else {
     let li = document.createElement("li");
@@ -22,7 +23,7 @@ btn.addEventListener("click", () => {
 // toggling the list items
 list.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
-    e.target.classList.toggle("clicked");
+    fe.target.classList.toggle("clicked");
     saveData();
   } else if (e.target.tagName === "IMG") {
     e.target.parentElement.remove();
