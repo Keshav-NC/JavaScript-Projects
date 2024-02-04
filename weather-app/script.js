@@ -73,5 +73,5 @@ searchBtn.addEventListener("click", () => {
   cheakWeather(city);
   if (city === "") {
     alert("Enter city name");
-  } else show.classList.add("show");
+  }
 });
