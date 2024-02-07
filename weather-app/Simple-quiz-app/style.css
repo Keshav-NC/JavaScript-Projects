@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --bg-clr: #050a30;
+  --quiz-bg-clr: #f9f1f0;
+  --text-clr: #050a30;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-clr);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+#quiz-container {
+  background-color: var(--quiz-bg-clr);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+#quiz-container h2 {
+  font-size: 1.5rem;
+  color: var(--text-clr);
+  font-weight: 700;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid #000;
+}
+
+#quiz-container h3 {
+  font-size: 1rem;
+  color: var(--text-clr);
+  font-weight: 600;
+  padding-top: 0.2rem;
+}
+
+#answer-btn {
+  display: grid;
+  row-gap: 1rem;
+  margin: 1rem 0;
+  width: 60vw;
+}
+
+#quiz-container .btn {
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  outline: none;
+  border: 0.1rem solid #000;
+  box-shadow: 0 0 0.4rem transparent;
+  cursor: pointer;
+  transition-property: border, box-shadow, background-color, color;
+  transition: 0.3s ease-in-out;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#quiz-container .btn:hover:not([disabled]) {
+  border: 0.1rem solid transparent;
+  box-shadow: 0 0 0.4rem var(--bg-clr);
+  background-color: var(--bg-clr);
+  color: white;
+}
+
+#quiz-container .btn:disabled {
+  cursor: no-drop;
+}
+
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#next-btn {
+  padding: 0.5rem;
+  width: 10rem;
+  background-color: green;
+  outline: none;
+  border: 0.1rem solid transparent;
+  box-shadow: 0 0 0.2rem transparent;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-property: box-shadow, background-color, color;
+  transition: 0.3s ease-in-out;
+  display: none;
+}
+
+#next-btn:hover {
+  box-shadow: 0 0 0.2rem darkolivegreen;
+}
+
+.correct {
+  background-color: rgb(170, 255, 170);
+}
+
+.incorrect {
+  background-color: rgb(255, 144, 144);
+}

@@ -23,7 +23,7 @@ button.addEventListener("click", () => {
 // toggling the list items
 list.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
-    fe.target.classList.toggle("clicked");
+    e.target.classList.toggle("clicked");
     saveData();
   } else if (e.target.tagName === "IMG") {
     e.target.parentElement.remove();
