@@ -1,7 +1,3 @@
-const Question = document.getElementById("question"),
-  answerBtn = document.getElementById("answer-btn"),
-  Next = document.getElementById("next-btn");
-
 const questions = [
   {
     question: "The first post office in India was set up in …",
@@ -52,6 +48,11 @@ const questions = [
   },
 ];
 
+const Question = document.getElementById("question"),
+  answerBtn = document.getElementById("answer-btn"),
+  Next = document.getElementById("next-btn"),
+  quizContainer = document.getElementById("quiz-container");
+
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -59,6 +60,15 @@ const startQuiz = () => {
   currentQuestionIndex = 0;
   score = 0;
   Next.innerHTML = "Next";
+
+  // Question.style.display = "none";
+
+  // let h4 = document.createElement("h4");
+  // h4.innerHTML = "You have total 5 questions & each carries 2 marks";
+  // quizContainer.appendChild(h4);
+  // Next.innerHTML = "Start";
+  // Next.style.display = "initial";
+
   showQuestion();
 };
 

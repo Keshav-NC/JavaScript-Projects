@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="password-container">
+      <h1>Generate a <span>Random Password</span></h1>
+      <div class="input-copy">
+        <input id="inputBox" type="text" spellcheck="false" /><img
+          src="./images/copy-icon.svg"
+          alt=""
+        />
+      </div>
+      <button>Generate Password</button>
+    </main>
+    <script>
+      const inputBox = document.getElementById("inputBox");
+      const btn = document.querySelector("button");
+      const copy = document.querySelector("img");
+
+      const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const lower = "abcdefghijklmnopqrstuvwxyz";
+      const number = "0123456789";
+      const symbol = "!@#$%^&*()_+{}><?/";
+      const length = 12;
+      const generatedPassword = upper + lower + number + symbol;
+
+      btn.addEventListener("click", () => {
+        let password = "";
+        password += upper[Math.floor(Math.random() * upper.length)];
+        password += lower[Math.floor(Math.random() * lower.length)];
+        password += number[Math.floor(Math.random() * number.length)];
+        password += symbol[Math.floor(Math.random() * symbol.length)];
+
+        while (length > password.length) {
+          password +=
+            generatedPassword[
+              Math.floor(Math.random() * generatedPassword.length)
+            ];
+          inputBox.value = password;
+        }
+      });
+
+      copy.addEventListener("click", () => {
+        inputBox.select();
+        navigator.clipboard.writeText(inputBox.value);
+      });
+    </script>
+  </body>
+</html>
