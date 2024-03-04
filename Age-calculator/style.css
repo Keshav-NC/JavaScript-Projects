@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ojuju:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 8rem;
+  font-family: "Ojuju", sans-serif;
+  min-height: 100vh;
+}
+
+#age-calc h1 {
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+#age-calc .input-btn {
+  max-width: 35vw;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  padding: 2rem 1rem;
+  border-radius: 0.6rem;
+}
+
+#age-calc .input-btn input,
+button {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#age-calc .input-btn input {
+  flex: 1;
+  border: 0.1rem solid gray;
+  transition-property: box-shadow;
+  position: relative;
+}
+
+#age-calc .input-btn input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  background-position: calc(100% - 0.5rem);
+  background-size: 1rem;
+  cursor: pointer;
+}
+
+#age-calc .input-btn button {
+  border: 0.1rem solid #000;
+  transition-property: color, background-color;
+}
+
+#age-calc .input-btn input:hover,
+#age-calc .input-btn input:focus {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+}
+
+#age-calc .input-btn button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#age-calc .input-btn input,
+#age-calc .input-btn button {
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
